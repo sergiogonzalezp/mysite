@@ -15,6 +15,6 @@ Including another URLconf
 """
 #from django.conf.urls import url
 from django.conf.urls import *
-from mysite.views import current_datetime
+from mysite.views import current_datetime, hours_ahead
 
-urlpatterns = patterns('', (r'^time/$', current_datetime),)
+urlpatterns = patterns('', (r'^time/$', current_datetime),(r'^time/plus/(\d{1,2})/$', hours_ahead),)
